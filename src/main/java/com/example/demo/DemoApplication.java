@@ -33,13 +33,13 @@ public class DemoApplication {
 					"Bob Gabrovsky", 
 					"bob.gabrovsky@telus.com", 
 					LocalDate.of(2000, Month.JUNE, 10), 
-					19));
+					19),
 				new Student(
 					1L, 
 					"Bill Gabrovsky", 
 					"bill.gabrovsky@telus.com", 
 					LocalDate.of(1998, Month.JUNE, 10), 
-					19),
+					19));
 	}
 
 }
