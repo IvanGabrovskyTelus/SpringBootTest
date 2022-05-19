@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.student.Student;
@@ -19,9 +20,7 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 	
-	@GetMapping("/api/v1/student")
-	public List<Student> hellow() {
-		return List.of(
+	private List<Student> studentsList = List.of(
 				new Student(
 					1L, 
 					"Ivan Gabrovsky", 
@@ -30,16 +29,30 @@ public class DemoApplication {
 					19), 
 				new Student(
 					2L, 
-					"Bob Gabrovsky", 
-					"bob.gabrovsky@telus.com", 
-					LocalDate.of(2000, Month.JUNE, 10), 
+					"Bob Proktor", 
+					"bob.proktor@telus.com", 
+					LocalDate.of(2000, Month.MAY, 1), 
 					19),
 				new Student(
-					1L, 
-					"Bill Gabrovsky", 
-					"bill.gabrovsky@telus.com", 
-					LocalDate.of(1998, Month.JUNE, 10), 
+					3L, 
+					"Bill Smith", 
+					"bill.smith@telus.com", 
+					LocalDate.of(1998, Month.JANUARY, 21), 
 					19));
+	
+	@GetMapping("/api/v1/student")
+	public List<Student> getStudents() {
+		return studentsList;
+	}
+	
+	@GetMapping("/api/v1/student/{id}")
+	public Student getStudent(@PathVariable String id) {
+		Student student = studentsList
+				.stream()
+				.filter( s -> s.getId() == Long.parseLong(id))
+				.findFirst()
+				.orElse(null);
+		return student;
 	}
 
 }
