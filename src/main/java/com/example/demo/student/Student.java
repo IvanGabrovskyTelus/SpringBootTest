@@ -5,6 +5,11 @@ import java.util.Objects;
 
 public class Student {
 	private Long id;
+	private String name;
+	private String email;
+	private LocalDate dob;
+	private Integer age;
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -22,10 +27,6 @@ public class Student {
 		return Objects.equals(id, other.id);
 	}
 
-	private String name;
-	private String email;
-	private LocalDate dob;
-	private Integer age;
 	
 	public Student() {
 		super();
