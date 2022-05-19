@@ -21,12 +21,25 @@ public class DemoApplication {
 	
 	@GetMapping("/api/v1/student")
 	public List<Student> hellow() {
-		return List.of(new Student(
-				1L, 
-				"Ivan Gabrovsky", 
-				"ivan.gabrovsky@telus.com", 
-				LocalDate.of(2002, Month.JUNE, 10), 
-				19));
+		return List.of(
+				new Student(
+					1L, 
+					"Ivan Gabrovsky", 
+					"ivan.gabrovsky@telus.com", 
+					LocalDate.of(2002, Month.JUNE, 10), 
+					19), 
+				new Student(
+					2L, 
+					"Bob Gabrovsky", 
+					"bob.gabrovsky@telus.com", 
+					LocalDate.of(2000, Month.JUNE, 10), 
+					19));
+				new Student(
+					1L, 
+					"Bill Gabrovsky", 
+					"bill.gabrovsky@telus.com", 
+					LocalDate.of(1998, Month.JUNE, 10), 
+					19),
 	}
 
 }
