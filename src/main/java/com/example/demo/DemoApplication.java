@@ -9,8 +9,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.context.annotation.Bean;
 
 import com.example.demo.student.Student;
+import com.example.demo.student.StudentRepository;
 
 @SpringBootApplication
 @RestController
@@ -40,9 +42,10 @@ public class DemoApplication {
 					LocalDate.of(1998, Month.JANUARY, 21), 
 					19));
 	
+	@Bean
 	@GetMapping("/api/v1/student")
-	public List<Student> getStudents() {
-		return studentsList;
+	public List<Student> getStudents(StudentRepository repository) {
+		return repository.findAll(); // studentsList;
 	}
 	
 	@GetMapping("/api/v1/student/{id}")
@@ -54,5 +57,9 @@ public class DemoApplication {
 				.orElse(null);
 		return student;
 	}
-
+	
+//	@Bean
+//	public List<Student> getAllStudents(StudentRepository repository) {
+//		return repository.findAll();
+//	}
 }
