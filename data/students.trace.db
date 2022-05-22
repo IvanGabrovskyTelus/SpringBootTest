@@ -59,3 +59,12 @@ Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:461)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
 	... 55 more
+2022-05-21 15:40:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "STUDENT" not found; SQL statement:
+select student0_.id as id1_0_, student0_.age as age2_0_, student0_.dob as dob3_0_, student0_.email as email4_0_, student0_.name as name5_0_ from student student0_ [42102-200]
+2022-05-21 15:44:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "STUDENT" not found; SQL statement:
+select student0_.id as id1_0_, student0_.age as age2_0_, student0_.dob as dob3_0_, student0_.email as email4_0_, student0_.name as name5_0_ from student student0_ [42102-200]
+2022-05-21 15:44:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "STUDENTS" not found; SQL statement:
+select student0_.id as id1_0_, student0_.age as age2_0_, student0_.dob as dob3_0_, student0_.email as email4_0_, student0_.name as name5_0_ from students student0_ [42102-200]
