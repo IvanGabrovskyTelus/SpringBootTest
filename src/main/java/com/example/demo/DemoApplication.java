@@ -1,7 +1,5 @@
 package com.example.demo;
 
-//import java.time.LocalDate;
-//import java.time.Month;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-// import org.springframework.context.annotation.Bean;
 
 import com.example.demo.student.Student;
 import com.example.demo.student.StudentRepository;
@@ -29,7 +26,6 @@ public class DemoApplication {
 	
 	@Autowired
 	StudentRepository repository;
-	
 	
 	@GetMapping("/api/v1/student")
 	public List<Student> getStudents() {
