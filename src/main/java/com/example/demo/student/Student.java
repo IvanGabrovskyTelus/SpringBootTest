@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 public class Student {
+
 	private Long id;
 	private String name;
 	private String email;
@@ -94,6 +95,4 @@ public class Student {
 		return "Student [id=" + id + ", name=" + name + ", email=" + email + ", dob=" + dob + ", age=" + age + "]";
 	}
 	
-	
-
 }
