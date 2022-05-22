@@ -19,10 +19,10 @@ public interface StudentRepository {
 	@Delete("DELETE FROM students WHERE id = #{id}")
 	public int deleteById(long id);
 
-	@Insert("INSERT INTO students(id, name, email, dob, age) VALUES (#{id}, #{name}, #{email}, #{age})")
+	@Insert("INSERT INTO students(id, name, email, dob, age) VALUES (#{id}, #{name}, #{email}, #{dob}, #{age})")
 	public int insert(Student student);
 
-	@Update("Update students set name=#{name}, email=#{email}, age=#{age} where id=#{id}")
+	@Update("Update students set name=#{name}, email=#{email}, dob=#{dob}, age=#{age} where id=#{id}")
 	public int update(Student student);
 
 }
